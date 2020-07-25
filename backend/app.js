@@ -5,7 +5,7 @@ const userRoutes = require("./routes/user");
 const app = express();
 
 
-mongoose.connect('mongodb://localhost:27017/mern-exercise-tracker', { useNewUrlParser: true , useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/fileupload', { useNewUrlParser: true , useUnifiedTopology: true})
   .then(() => {
     console.log("Connected to database!");
   })

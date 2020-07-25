@@ -19,4 +19,19 @@ router.post('/register', (req, res, next) => {
     })
 });
 
+router.post('/uploadPhoto', (req, res, next) => {
+  var path = '';
+  console.log(req);
+  upload(req, res, function (err) {
+    if (err) {
+      console.log(err);
+      return res.status(422).send("an Error occured")
+    }
+    console.log(req.file.path)
+    path = req.file.path;
+    return res.status(200).json({ path: path });
+  });
+});
+
+
 module.exports = router;
